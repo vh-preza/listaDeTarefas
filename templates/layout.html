@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../static/style.css">
+        <link rel="icon" href="../static/favicon.ico" type="image/x-icon">
+        <title>To Do List</title>
+    </head>
+    <body>
+        <div id="head-strip">
+            <h1>Organize Your Life</h1>
+            {% block head %}
+            {% endblock %}
+        </div>
+        <div id="body">
+            {% block body %}
+            {% endblock %}
+        </div>
+    </body>
+    <footer>
+        <div id="footer-strip">&#169; 2025 www.todo.com - All Rights Reserved.</div>
+    </footer>
+</html>

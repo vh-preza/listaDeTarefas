@@ -1,0 +1,175 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#head-strip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: aquamarine;
+    text-align: center;
+    font-size: 24pt;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.side-text {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    font-size: 18pt;
+    margin-right: 5%;
+}
+
+#body {
+    flex: 1;
+}
+
+#footer-strip {
+    background-color: cadetblue;
+    padding: 2%;
+    text-align: center;
+    font-size: 14pt;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-form {
+    margin-top: 5%;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding-left: 40%;
+    padding-right: 40%;
+    padding-top: 1%;
+    gap: 10px;
+}
+
+input {
+    padding: 10px;
+}
+
+.button-login-form {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgb(13, 58, 141);
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.title-h1 {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 42pt;
+    margin-top: 3%;
+}
+
+.login-reference {
+    text-decoration: none;
+    color: black;
+}
+
+.login-error {
+    margin-top: 2%;
+}
+
+.list-item {
+    display: flex;
+    gap: 1%;
+    justify-content: center;
+}
+
+#list-table {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 3%;
+    border-collapse: collapse;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.task-table {
+    width: 20%;
+    word-wrap: break-word;
+    max-width: 1px;
+    overflow: hidden;
+}
+
+.utils-table {
+    width: 5%;
+}
+
+#check-table {
+    text-align: right;
+    padding-right: 4%;
+}
+
+#update-delete-table {
+    text-align: left;
+    padding-left: 4%;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.5);
+    accent-color: #4CAF50;
+}
+
+#update-delete-icons {
+    display: flex;
+    gap: 10%;
+}
+
+.click-icon {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.task-edit-text {
+    display: none;
+}
+
+#query-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1%;
+}
+
+.flash-message {
+    padding: 1%;
+    margin-top: 1%;
+    text-align: center;
+    border: 1px solid rgb(172, 15, 15);
+    background-color: rgb(219, 155, 155);
+    border-radius: 5px;
+    width: fit-content;
+    align-items: center;
+}
+
+#task-add-button {
+    background-color: rgb(13, 58, 141);
+    border: 1px solid black;
+    cursor: pointer;
+    padding: 1%;
+}
+
+@media (max-width: 600px) {
+    #head-strip {
+        flex-direction: column;
+    }
+
+    .side-text {
+        position: unset;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+}

@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    <div class="side-text">
+        <p><a class="login-reference" href="/logout">Logout</a></p>
+    </div>
+{% endblock %}
+
+{% block body %}
+    <h1 class="title-h1">To Do</h1>
+    <div>
+        <form action="/add" method="post">
+            <input autocomplete="off" name="task" placeholder="Add a task..." type="text">
+            <button id="task-add-button" type="submit">Add</button>
+        </form>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <div id="query-wrap">
+                <div id="flash-container">
+                    {% for message in messages %}
+                        <div class="flash-message">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        {% endwith %}
+    </div>
+    <div id="checklist-div">
+        <table id="list-table">
+            <tbody>
+                {% for item in items %}
+                    <tr id="task-row-{{ item.0 }}">
+                        <td class="utils-table" id="check-table">
+                            <input
+                            class="click-icon checkbox-input"
+                            id="{{ item.0 }}"
+                            type="checkbox"
+                            value="{{ item.1 }}"
+                            {% if item.2 == 1 %}
+                            checked="true"
+                            {% endif %}
+                            >
+                        </td>
+                        <td class="task-table">
+                            <p id="task-text-{{ item.0 }}">{{ item.1 }}</p>
+                            <input class="task-edit-text" id="task-edit-{{ item.0 }}" type="text" value="{{ item.1 }}">
+                        </td>
+                        <td class="utils-table" id="update-delete-table">
+                            <div id="update-delete-icons">
+                                <p class="click-icon" onclick="updateTask({{ item.0 }})">&#128393;</p>
+                                <form action="/delete/{{ item.0 }}" method="post">
+                                    <p><button type="submit" class="click-icon">&#128465;</button></p>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <script src="../static/index.js"></script> 
+{% endblock %}
